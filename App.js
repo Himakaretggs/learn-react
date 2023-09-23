@@ -1,19 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "bootstrap/dist/css/bootstrap.css";
+import Header from "./src/components/Header";
+import Body from "./src/components/Body";
 
-var parent = React.createElement(
-    "div",
-    {id: "parent"},
-    React.createElement(
-        'div',
-        {id: "child"},
-        [
-            React.createElement('h1',{},"I am a h1 tag"),
-            React.createElement('h2',{},"I am a h2 tag")
-        ]
-    )
-);
+const AppLayout = () => {
+    return (
+        <div className="app">
+            <Header />
+            <Body />
+        </div>
+    );
+};
 
 var root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(parent);
+root.render(<AppLayout />);
